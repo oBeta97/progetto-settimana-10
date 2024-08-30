@@ -2,6 +2,8 @@ import { Col, Container } from "react-bootstrap";
 import SearchBar from "./SearchBar";
 import ThreeColRow from "./ThreeColRow";
 import { useState } from "react";
+import CurrentWeather from "./CurrentWeather";
+import PopularCities from "./PopularCities";
 
 const MyMain = (props) => {
 
@@ -18,9 +20,9 @@ const MyMain = (props) => {
                     right="ciao"
                 />
                 <ThreeColRow
-                    left={""}
-                    center={searchedCity}
-                    right={""}
+                    left={<CurrentWeather city={searchedCity}/>}
+                    center={"mappa"}
+                    right={<PopularCities onCityClick={(city) => setSearchedCity(city) } />}
                 />
             </Container>
 
