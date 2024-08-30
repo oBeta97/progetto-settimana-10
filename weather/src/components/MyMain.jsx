@@ -6,10 +6,15 @@ import CurrentWeather from "./CurrentWeather";
 import PopularCities from "./PopularCities";
 import TwoColRow from "./TwoColRow";
 import ForecastWeather from "./ForecastWeather";
+import Map from "./Map";
 
 const MyMain = (props) => {
 
     const [searchedCity, setSearchedCity] = useState('Vicenza')
+    const [searchedCityCoordinates, setSearchedCityCoordinates] = useState({
+        lat: 0,
+        lng: 0,
+    })
 
     return (
         <Col
@@ -21,15 +26,23 @@ const MyMain = (props) => {
                     leftVisibility=""
                     center=""
                     right="ciao"
-                    />
+                />
                 <ThreeColRow
-                    left={<CurrentWeather city={searchedCity}/>}
-                    center={"mappa"}
+                    left={
+                        <CurrentWeather
+                            city={searchedCity}
+                            onFetchEnd={(coordinates) => setSearchedCityCoordinates(coordinates)}
+                        />
+                    }
+                    center={
+                        <Map
+                            center={searchedCityCoordinates}
+                        />}
                     centerVisibility="d-none d-lg-block"
-                    right={<PopularCities onCityClick={(city) => setSearchedCity(city) } />}
+                    right={<PopularCities onCityClick={(city) => setSearchedCity(city)} />}
                     rightVisibility="d-none d-lg-block"
                 />
-                <TwoColRow 
+                <TwoColRow
                     left={<ForecastWeather city={searchedCity} />}
                     right
                 />
