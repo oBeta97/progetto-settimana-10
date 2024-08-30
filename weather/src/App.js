@@ -6,8 +6,9 @@ import MyNav from './components/MyNav';
 function App() {
   return (
     <Row
-      className='vh-100 m-0 p-0 body-div text-white'
+      className='h-100 m-0 p-0 body-div text-white align-items'
       data-bs-theme='dark'
+      style={{minHeight:'100vh'}}
     >
       <MyNav />
       <MyMain />

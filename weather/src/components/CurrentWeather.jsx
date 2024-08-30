@@ -1,7 +1,7 @@
 import { Col, Row, Spinner } from "react-bootstrap";
 import { showCurrentTime } from "../modules/DateTime";
 import { useEffect, useState } from "react";
-import { ArrowUp, Droplet, FiletypeWav, Water, Wind } from "react-bootstrap-icons";
+import { ArrowUp, Droplet, Water, Wind } from "react-bootstrap-icons";
 
 const CurrentWeather = (props) => {
 
@@ -62,7 +62,7 @@ const CurrentWeather = (props) => {
                                 </Col>
                                 <Col sm={6}>
                                     <h3 className="m-0">
-                                        {currentWeather.main.temp}<sup style={{ fontSize: "0.6em" }}>°C</sup>
+                                        {currentWeather.main.temp.toString().slice(0,2)}<sup style={{ fontSize: "0.6em" }}>°C</sup>
                                     </h3>
                                     <small>
                                         {currentWeather.weather[0].main}

@@ -7,7 +7,6 @@ const MyNav = (props) => {
         <Col
             style={{
                 maxWidth: "5em",
-                height: "100vh",
             }}
             className="p-3 dark-blue-trasparent"
         >

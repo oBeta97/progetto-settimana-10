@@ -1,5 +1,3 @@
-import { Col, Row } from "react-bootstrap";
-import { Cloud } from "react-bootstrap-icons";
 import CityRow from "./CityRow";
 
 const PopularCities = (props) => {
@@ -14,7 +12,7 @@ const PopularCities = (props) => {
 
     return (
         <div className="dark-blue-trasparent w-100 p-3 rounded-4">
-            <h6>
+            <h6 className="fw-bold p-0 m-0">
                 Popular cities
             </h6>
 

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Col, Row, Spinner } from "react-bootstrap";
-import { Cloud } from "react-bootstrap-icons";
 
 
 const CityRow = (props) => {
@@ -30,6 +29,7 @@ const CityRow = (props) => {
 
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => getCurrentWeather(props.city), [])
 
     return (
